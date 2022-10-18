@@ -61,6 +61,7 @@ return (length);
 /**
  * _handle_format_cases - handle various print formats'
  * @format: takes in the input
+ * @arguments: va arguments
  * Return: Number of characters printed
  */
 int _handle_format_cases(va_list arguments, char format)
