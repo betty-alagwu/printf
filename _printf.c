@@ -58,7 +58,8 @@ int _printf(const char *format, ...)
 int i = 0;
 int total_characters_printed = 0;
 va_list arguments;
-if (format == NULL) {
+if (format == NULL)
+{
     return (-1);
 }
 va_start(arguments, format);
