@@ -113,6 +113,10 @@ _write_char(current);
 total_characters_printed++;
 }
 }
+if (current == '%' && _is_restricted_character(next) == 0) {
+_write_char('%');
+total_characters_printed++;
+}
 if (current != '%' && previous != '%')
 {
 _write_char(current);
