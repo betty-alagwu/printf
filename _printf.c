@@ -4,10 +4,8 @@
 #include "main.h"
 
 /**
- * _is_restricted_character: entry point
+ * _is_restricted_character - 'check if character is restricted'
  * @element: stores the restricted characters
- * Description: 'check if character is restricted'
- *
  * Return: true or false
  */
 
@@ -23,9 +21,7 @@ element == 'x' || element == 'X'
 }
 
 /**
- * _write_integer - entry point
- *
- * Description: 'handle writing an integer'
+ * _write_integer - entry point - 'handle writing an integer'
  * @arguments: takes in the argument
  * Return: Number of characters printed
  */
@@ -63,13 +59,10 @@ d = d / 10;
 return (length);
 }
 /**
- * _handle_format_cases
- *
- * Description: 'handle various print formats'
+ * _handle_format_cases - handle various print formats'
  * @format: takes in the input
  * Return: Number of characters printed
  */
-
 int _handle_format_cases(va_list arguments, char format)
 {
 if (format == 'c')
@@ -85,9 +78,7 @@ return (1);
 }
 
 /**
- * _printf - Custom printf
- *
- * Description: 'clone of printf std function'
+ * _printf - Custom printf - 'clone of printf std function'
  * @format: takes in the input
  * Return: Number of characters printed
  */
