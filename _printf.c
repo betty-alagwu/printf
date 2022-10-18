@@ -75,6 +75,11 @@ if (format == 's')
 int length_of_string = _write_string(arguments);
 return (length_of_string);
 }
+if (format == 'd' || format == 'i')
+{
+int length_of_string = _write_integer(arguments);
+return (length_of_string);
+}
 return (1);
 }
 
