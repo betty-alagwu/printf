@@ -2,7 +2,7 @@
 #include "main.h"
 
 /**
- * fun_integer - print integer and digit
+ * _write_integer - print integer and digit
  * @arguments: va_list
  * Return: int
  */
