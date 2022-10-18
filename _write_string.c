@@ -3,10 +3,8 @@
 #include "main.h"
 
 /**
- * _write_string
- *
- * Description: 'write a string'
- *
+ * _write_string write a string to stdout
+ * @arguments: va list
  * Return: number of characters written
  */
 int _write_string(va_list arguments)

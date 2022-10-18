@@ -1,10 +1,8 @@
 #include <unistd.h>
 
 /**
- * _write_char
- *
- * Description: 'write a single character'
- *
+ * _write_char - write a char to stdout
+ * @element: character to print
  * Return: 0 for success
  */
 
