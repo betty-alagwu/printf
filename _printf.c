@@ -68,7 +68,8 @@ while (format[i] != '\0')
 char current = format[i];
 char next = format[i + 1];
 char previous = format[i - 1];
-if (current != '%' && previous == '%' && _is_restricted_character(current) == 0)
+if (current != '%' && previous == '%'
+&& _is_restricted_character(current) == 0)
 {
 _write_char(current);
 total_characters_printed++;
