@@ -68,14 +68,10 @@ while (format[i] != '\0')
 char current = format[i];
 char next = format[i + 1];
 char previous = format[i - 1];
-
-if (current != '%' && previous == '%')
-{
-if (_is_restricted_character(current) == 0)
+if (current != '%' && previous == '%' && _is_restricted_character(current) == 0)
 {
 _write_char(current);
 total_characters_printed++;
-}
 }
 if (current == '%' && _is_restricted_character(next) == 0)
 {
@@ -93,7 +89,6 @@ total_characters_printed += _handle_format_cases(arguments, next);
 }
 i++;
 }
-
 va_end(arguments);
 return (total_characters_printed);
 }
