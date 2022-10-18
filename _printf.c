@@ -49,7 +49,8 @@ if (i < 0)
 {
 length = length + _write_char('-');
 x = i * -1;
-} else
+}
+else
 {
 x = i;
 }
@@ -72,21 +73,17 @@ int _printf(const char *format, ...)
 int i = 0;
 int total_characters_printed = 0;
 va_list arguments;
-
 va_start(arguments, format);
-
 while (format[i] != '\0')
 {
 char current = format[i];
 char next = format[i + 1];
 char previous = format[i - 1];
-
 if (current == '%' && next == '%')
 {
 _write_char('%');
 total_characters_printed++;
 }
-
 if (current != '%' && previous == '%')
 {
 if (_is_restricted_character(current) == 0)
@@ -95,7 +92,6 @@ _write_char(current);
 total_characters_printed++;
 }
 }
-
 if (current != '%' && previous != '%')
 {
 _write_char(current);
@@ -109,7 +105,6 @@ _write_char(va_arg(arguments, int));
 total_characters_printed++;
 }
 }
-
 if (current == '%')
 {
 if (next == 's')
@@ -127,11 +122,8 @@ if (current == '%' && next == 'd')
 {
 _write_integer(arguments);
 }
-
 i++;
 }
-
 va_end(arguments);
-
 return (total_characters_printed);
 }
