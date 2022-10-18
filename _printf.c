@@ -3,13 +3,13 @@
 
 int _is_restricted_character(char element)
 {
-return element == 'c' || element == 'd'
+return (element == 'c' || element == 'd'
 || element == 'i' || element == 's'
 ||
 element == 'p' || element == 'b' || element == 'u'
 || element == 'o' ||
 element == 'x' || element == 'X'
-|| element == '%';
+|| element == '%');
 }
 
 int _write_char(char element)
@@ -26,43 +26,44 @@ int i = 0;
 
 str = va_arg(arguments, char *);
 
-for (; *str; str++) {
+for (; *str; str++)
+{
 _write_char(*str);
 i++;
 }
-return i;
+return (i);
 }
 
 int _write_integer(va_list arguments)
 {
-  int i;
-  int d;
-  int length;
-  unsigned int x;
+int i;
+int d;
+int length;
+unsigned int x;
 
-  i = va_arg(arguments, int);
-  d = 1;
-  length = 0;
+i = va_arg(arguments, int);
+d = 1;
+length = 0;
 
-  if (i < 0)
-  {
-    length = length + _write_char('-');
-    x = i * -1;
-  } else
-  {
-    x = i;
-  }
+if (i < 0)
+{
+length = length + _write_char('-');
+x = i * -1;
+} else
+{
+x = i;
+}
 
-  while (x / d > 9)
-    d = d * 10;
+while (x / d > 9)
+d = d * 10;
 
-  while (d != 0)
-  {
-    length = length + _write_char('0' + x / d);
-    x = x % d;
-    d = d / 10;
-  }
-  return (length);
+while (d != 0)
+{
+length = length + _write_char('0' + x / d);
+x = x % d;
+d = d / 10;
+}
+return (length);
 }
 
 
@@ -88,7 +89,8 @@ total_characters_printed++;
 
 if (current != '%' && previous == '%')
 {
-if (_is_restricted_character(current) == 0) {
+if (_is_restricted_character(current) == 0)
+{
 _write_char(current);
 total_characters_printed++;
 }
@@ -131,5 +133,5 @@ i++;
 
 va_end(arguments);
 
-return total_characters_printed;
+return (total_characters_printed);
 }
