@@ -3,6 +3,14 @@
 
 #include "main.h"
 
+/**
+ * _is_restricted_character
+ *
+ * Description: 'check if character is restricted'
+ *
+ * Return: true or false
+ */
+
 int _is_restricted_character(char element)
 {
 return (element == 'c' || element == 'd'
@@ -13,6 +21,14 @@ element == 'p' || element == 'b' || element == 'u'
 element == 'x' || element == 'X'
 || element == '%');
 }
+
+/**
+ * _write_integer
+ *
+ * Description: 'handle writing an integer'
+ *
+ * Return: Number of characters printed
+ */
 
 int _write_integer(va_list arguments)
 {
@@ -46,6 +62,14 @@ d = d / 10;
 }
 return (length);
 }
+/**
+ * _handle_format_cases
+ *
+ * Description: 'handle various print formats'
+ *
+ * Return: Number of characters printed
+ */
+
 int _handle_format_cases(va_list arguments, char format)
 {
 if (format == 'c')
@@ -59,6 +83,14 @@ return (length_of_string);
 }
 return (1);
 }
+
+/**
+ * _printf - Custom printf
+ *
+ * Description: 'clone of printf std function'
+ *
+ * Return: Number of characters printed
+ */
 
 int _printf(const char *format, ...)
 {

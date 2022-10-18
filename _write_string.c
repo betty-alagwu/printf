@@ -2,6 +2,14 @@
 #include <stdarg.h>
 #include "main.h"
 
+/**
+ * _write_string
+ *
+ * Description: 'write a string'
+ *
+ * Return: number of characters written
+ */
+
 int _write_string(va_list arguments)
 {
 char *str;
