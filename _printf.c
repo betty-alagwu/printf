@@ -4,13 +4,9 @@
 #include "main.h"
 
 /**
- * _is_restricted_character
- *
- * Description: 'check if character is restricted'
- *
+ * _is_restricted_character: 'check if character is restricted'
  * Return: true or false
  */
-
 int _is_restricted_character(char element)
 {
 return (element == 'c' || element == 'd'

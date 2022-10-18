@@ -9,7 +9,6 @@
  *
  * Return: number of characters written
  */
-
 int _write_string(va_list arguments)
 {
 char *str;
