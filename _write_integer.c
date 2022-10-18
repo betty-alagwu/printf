@@ -2,11 +2,11 @@
 #include "main.h"
 
 /**
- * _write_integer - print integer and digit
- * @arguments: va_list
- * Return: int
+ * _write_integer - entry point - 'handle writing an integer'
+ * @arguments: takes in the argument
+ * Return: Number of characters printed
  */
-int write_integer(va_list arguments)
+int _write_integer(va_list arguments)
 {
 	int i, d, length;
 	unsigned int x;
