@@ -1,6 +1,8 @@
 #include <unistd.h>
 #include <stdarg.h>
 
+#include "main.h"
+
 int _is_restricted_character(char element)
 {
 return (element == 'c' || element == 'd'
@@ -10,28 +12,6 @@ element == 'p' || element == 'b' || element == 'u'
 || element == 'o' ||
 element == 'x' || element == 'X'
 || element == '%');
-}
-
-int _write_char(char element)
-{
-write(1, &element, 1);
-
-return (0);
-}
-
-int _write_string(va_list arguments)
-{
-char *str;
-int i = 0;
-
-str = va_arg(arguments, char *);
-
-for (; *str; str++)
-{
-_write_char(*str);
-i++;
-}
-return (i);
 }
 
 int _write_integer(va_list arguments)
@@ -66,7 +46,19 @@ d = d / 10;
 }
 return (length);
 }
-
+int _handle_format_cases(va_list arguments, char format)
+{
+if (format == 'c')
+{
+_write_char(va_arg(arguments, int));
+}
+if (format == 's')
+{
+int length_of_string = _write_string(arguments);
+return (length_of_string);
+}
+return (1);
+}
 
 int _printf(const char *format, ...)
 {
@@ -99,28 +91,7 @@ total_characters_printed++;
 }
 if (current == '%')
 {
-if (next == 'c')
-{
-_write_char(va_arg(arguments, int));
-total_characters_printed++;
-}
-}
-if (current == '%')
-{
-if (next == 's')
-{
-int length_of_string = _write_string(arguments);
-
-total_characters_printed += length_of_string;
-}
-}
-if (current == '%' && next == 'i')
-{
-_write_integer(arguments);
-}
-if (current == '%' && next == 'd')
-{
-_write_integer(arguments);
+total_characters_printed += _handle_format_cases(arguments, next);
 }
 i++;
 }
