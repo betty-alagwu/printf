@@ -3,7 +3,7 @@
 #include "main.h"
 
 /**
- * _write_string write a string to stdout
+ * _write_string - write a string to stdout
  * @arguments: va list
  * Return: number of characters written
  */
