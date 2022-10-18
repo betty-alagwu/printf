@@ -13,7 +13,6 @@ int _write_char(char element) {
   return 0;
 }
 
-// testing for string
 int _write_string(va_list arguments) {
   char *str;
   int i = 0;
@@ -26,8 +25,6 @@ int _write_string(va_list arguments) {
   }
   return i;
 }
-
-// testing for i and d
 
 int fun_integer(va_list arguments) {
   int i;
@@ -58,7 +55,6 @@ int fun_integer(va_list arguments) {
 }
 
 
-// printf function
 int _printf(const char *format, ...) {
   int i = 0;
   int total_characters_printed = 0;
@@ -66,7 +62,6 @@ int _printf(const char *format, ...) {
 
   va_start(arguments, format);
 
-  // Percent:[%%][%c]
   while (format[i] != '\0') {
     char current = format[i];
     char next = format[i + 1];
