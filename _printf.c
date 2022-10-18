@@ -4,8 +4,8 @@
 #include "main.h"
 
 /**
- * _is_restricted_character: 
- *
+ * _is_restricted_character: entry point
+ * @element: stores the restricted characters
  * Description: 'check if character is restricted'
  *
  * Return: true or false
@@ -23,10 +23,10 @@ element == 'x' || element == 'X'
 }
 
 /**
- * _write_integer
+ * _write_integer - entry point
  *
  * Description: 'handle writing an integer'
- *
+ * @arguments: takes in the argument
  * Return: Number of characters printed
  */
 
@@ -66,7 +66,7 @@ return (length);
  * _handle_format_cases
  *
  * Description: 'handle various print formats'
- *
+ * @format: takes in the input
  * Return: Number of characters printed
  */
 
@@ -88,7 +88,7 @@ return (1);
  * _printf - Custom printf
  *
  * Description: 'clone of printf std function'
- *
+ * @format: takes in the input
  * Return: Number of characters printed
  */
 
