@@ -1,4 +1,5 @@
 #include <stdarg.h>
+#include "main.h"
 
 /**
  * fun_integer - print integer and digit
@@ -16,7 +17,7 @@ int write_integer(va_list arguments)
 
 	if (i < 0)
 	{
-		length = length + _putchar('-');
+		length = length + _write_char('-');
 		x = i * -1;
 	}
 	else
@@ -29,7 +30,7 @@ int write_integer(va_list arguments)
 
 	while (d != 0)
 	{
-		length = length + _putchar('0' + x / d);
+		length = length + _write_char('0' + x / d);
 		x = x % d;
 		d = d / 10;
 	}
