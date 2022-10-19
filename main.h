@@ -2,13 +2,12 @@
 #ifndef MAIN_H
 #define MAIN_H
 #include <stdarg.h>
-<<<<<<< HEAD
+
 
 int _printf(const char *format, ...);
 int _write_string(va_list arguments);
 int _write_char(char element);
 int _write_integer(va_list arguments);
-=======
 #include <stdio.h>
 #include <unistd.h>
 
@@ -119,6 +118,6 @@ int is_digit(char);
 
 long int convert_size_number(long int num, int size);
 long int convert_size_unsgnd(unsigned long int num, int size);
->>>>>>> f9e7ca3bdb5c6ce1e5b49631c1839dd840ba7efc
+
 
 #endif /* MAIN_H */

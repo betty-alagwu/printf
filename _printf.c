@@ -1,7 +1,5 @@
-<<<<<<< HEAD
 #include <unistd.h>
 #include <stdarg.h>
-
 #include "main.h"
 
 /**
@@ -93,8 +91,7 @@ i++;
 }
 va_end(arguments);
 return (total_characters_printed);
-=======
-#include "main.h"
+}
 
 void print_buffer(char buffer[], int *buff_ind);
 
@@ -112,9 +109,7 @@ int _printf(const char *format, ...)
 
 	if (format == NULL)
 		return (-1);
-
 	va_start(list, format);
-
 	for (i = 0; format && format[i] != '\0'; i++)
 	{
 		if (format[i] != '%')
@@ -122,7 +117,6 @@ int _printf(const char *format, ...)
 			buffer[buff_ind++] = format[i];
 			if (buff_ind == BUFF_SIZE)
 				print_buffer(buffer, &buff_ind);
-			/* write(1, &format[i], 1);*/
 			printed_chars++;
 		}
 		else
@@ -133,18 +127,16 @@ int _printf(const char *format, ...)
 			precision = get_precision(format, &i, list);
 			size = get_size(format, &i);
 			++i;
-			printed = _print_formatted_output(format, &i, list, buffer,
-				flags, width, precision, size);
+printed =
+_print_formatted_output(format, &i, list, buffer,
+		flags, width, precision, size);
 			if (printed == -1)
 				return (-1);
 			printed_chars += printed;
 		}
 	}
-
 	print_buffer(buffer, &buff_ind);
-
 	va_end(list);
-
 	return (printed_chars);
 }
 
@@ -159,5 +151,5 @@ void print_buffer(char buffer[], int *buff_ind)
 		write(1, &buffer[0], *buff_ind);
 
 	*buff_ind = 0;
->>>>>>> f9e7ca3bdb5c6ce1e5b49631c1839dd840ba7efc
+
 }
