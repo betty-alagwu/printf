@@ -16,10 +16,13 @@ int _print_fmt_output(const char *fmt, int *ind, va_list list, char buffer[],
 {
 	int i, unknow_len = 0, printed_chars = -1;
 	fmt_t fmt_types[] = {
-		{'c', _print_single_char}, {'s', _handle_print_string}, {'%', _handle_print_pct},
+		{'c', _print_single_char}, {'s', _handle_print_string},
+		{'%', _handle_print_pct},
 		{'i', _print_int}, {'d', _print_int}, {'b', _print_bin},
-		{'u', _handle_print_unsigned}, {'o', _handle_print_octal}, {'x', _print_hexdec},
-		{'X', _print_hexdec_up}, {'p', _handle_print_pointer}, {'S', _handle_non_printable},
+		{'u', _handle_print_unsigned},
+		{'o', _handle_print_octal}, {'x', _print_hexdec},
+		{'X', _print_hexdec_up},
+		{'p', _handle_print_pointer}, {'S', _handle_non_printable},
 		{'r', _print_rev}, {'R', print_rot13string}, {'\0', NULL}
 	};
 	for (i = 0; fmt_types[i].fmt != '\0'; i++)
