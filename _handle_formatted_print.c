@@ -11,21 +11,30 @@
  * @size: Size specifier
  * Return: 1 or 2;
  */
-int _print_formatted_output(const char *fmt, int *ind, va_list list, char buffer[],
+int _print_formatted_output(const char *fmt,
+		int *ind, va_list list, char buffer[],
 	int flags, int width, int precision, int size)
 {
 	int i, unknow_len = 0, printed_chars = -1;
 	fmt_t fmt_types[] = {
-		{'c', _print_single_char}, {'s', _handle_print_string}, {'%', _handle_print_escaped_percent},
-		{'i', _handle_print_integer}, {'d', _handle_print_integer}, {'b', _handle_print_binary},
-		{'u', _handle_print_unsigned}, {'o', _handle_print_octal}, {'x', _handle__handle_print_hexadecimal},
-		{'X', _handle__handle_print_hexa_upper}, {'p', _handle_print_pointer}, {'S', _handle_non_printable},
-		{'r', _handle_print_reverse}, {'R', print_rot13string}, {'\0', NULL}
+{
+	'c', _print_single_char
+},
+{
+	's', _handle_print_string
+},
+{'%', _handle_print_escaped_percent},
+{'i', _handle_print_integer},
+{'d', _handle_print_integer}, {'b', _handle_print_binary},
+{'u', _handle_print_unsigned}, {'o', _handle_print_octal},
+{'x', _handle__handle_print_hexadecimal},
+{'X', _handle__handle_print_hexa_upper},
+{'p', _handle_print_pointer}, {'S', _handle_non_printable},
+{'r', _handle_print_reverse}, {'R', print_rot13string}, {'\0', NULL}
 	};
-	for (i = 0; fmt_types[i].fmt != '\0'; i++)
-		if (fmt[*ind] == fmt_types[i].fmt)
-			return (fmt_types[i].fn(list, buffer, flags, width, precision, size));
-
+for (i = 0; fmt_types[i].fmt != '\0'; i++)
+if (fmt[*ind] == fmt_types[i].fmt)
+	return (fmt_types[i].fn(list, buffer, flags, width, precision, size));
 	if (fmt_types[i].fmt == '\0')
 	{
 		if (fmt[*ind] == '\0')
